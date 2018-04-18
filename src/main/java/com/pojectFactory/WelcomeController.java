@@ -1,5 +1,6 @@
-package com.mkyong;
+package com.pojectFactory;
 
+import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -10,12 +11,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
 	// inject via application.properties
-	@Value("${welcome.message:test}")
-	private String message = "Hello World";
+	@Value("${welcome.title:test}")
+	private String title = "unknow";
+	
+	@Value("${welcome.label.date:test}")
+	private String dateLabel = "unknow";
 
 	@RequestMapping("/")
 	public String welcome(Map<String, Object> model) {
-		model.put("message", this.message);
+		model.put("title", title);
+		model.put("lastUpdateTime", dateLabel + new Date());
 		return "welcome";
 	}
 

@@ -1,7 +1,10 @@
-h1{
+
+.menuTitle{
 	color:#0000FF;
+	text-align: center;
 }
 
-h2{
+.menuFooter{
 	color:#FF0000;
+	text-align: right;
 }
